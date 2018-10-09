@@ -10,8 +10,7 @@ sed -i -e "s/<APC_SHM_SIZE>/$APC_SHM_SIZE/g" /php/conf.d/apcu.ini \
 
 # Put the configuration and apps into volumes
 ln -sf /config/config.php /nextcloud/config/config.php &>/dev/null
-ln -sf /apps2 /nextcloud &>/dev/null
-chown -h $UID:$GID /nextcloud/config/config.php /nextcloud/apps2
+chown -h $UID:$GID /nextcloud/config/config.php
 
 # Create folder for php sessions if not exists
 if [ ! -d /data/session ]; then
@@ -19,7 +18,7 @@ if [ ! -d /data/session ]; then
 fi
 
 echo "Updating permissions..."
-for dir in /nextcloud /data /config /apps2 /var/log /php /nginx /tmp /etc/s6.d; do
+for dir in /nextcloud /data /config /var/log /php /nginx /tmp /etc/s6.d; do
   if $(find $dir ! -user $UID -o ! -group $GID|egrep '.' -q); then
     echo "Updating permissions in $dir..."
     chown -R $UID:$GID $dir
