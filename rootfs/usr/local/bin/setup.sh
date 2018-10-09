@@ -18,11 +18,6 @@ cat > $CONFIGFILE <<EOF;
       0 => array (
               "path"     => "/nextcloud/apps",
               "url"      => "/apps",
-              "writable" => false,
-      ),
-      1 => array (
-              "path"     => "/apps2",
-              "url"      => "/apps2",
               "writable" => true,
       ),
   ),
