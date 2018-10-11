@@ -3,7 +3,7 @@
 
 [![](https://images.microbadger.com/badges/version/wonderfall/nextcloud.svg)](http://microbadger.com/images/wonderfall/nextcloud "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/wonderfall/nextcloud.svg)](http://microbadger.com/images/wonderfall/nextcloud "Get your own image badge on microbadger.com")
 
-**This image was made for my own use and I have no intention to make this official. Support won't be regular so if there's an update, or a fix, you can open a pull request. Any contribution is welcome, but please be aware I'm very busy currently. Before opening an issue, please check if there's already one related. Also please use Github instead of Docker Hub, otherwise I won't see your comments. Thanks.**
+**This image is made for the use within our community and we wont be able to provide support until it reaches a mature stage. For setup instructions, you can mostly rely on the forked Wonderfall/docker-nextcloud image. The changes will be commented once this leaves alpha state**
 
 ### Features
 - Based on Alpine Linux.
@@ -137,9 +137,9 @@ services:
       - solr                   # If using Nextant
       - redis                  # If using Redis
     environment:
-      - UID=1000
-      - GID=1000
-      - UPLOAD_MAX_SIZE=10G
+      - UID=991
+      - GID=991
+      - UPLOAD_MAX_SIZE=16G
       - APC_SHM_SIZE=128M
       - OPCACHE_MEM_SIZE=128
       - CRON_PERIOD=15m
